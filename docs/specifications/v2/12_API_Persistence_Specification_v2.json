@@ -1,0 +1,38 @@
+{
+  "version": "2.0.0",
+  "entity": "APIPersistenceSpecification",
+  "endpoints": [
+    {
+      "method": "POST",
+      "path": "/api/v1/quiz-sessions"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/quiz-sessions/{sessionId}/answers"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/quiz-sessions/{sessionId}/complete"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/assessments/{assessmentId}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/assessments/{assessmentId}/explanations"
+    }
+  ],
+  "tables": [
+    "quiz_sessions",
+    "quiz_responses",
+    "assessments",
+    "assessment_explanations",
+    "specification_versions"
+  ],
+  "immutability": {
+    "completedSessions": true,
+    "assessmentsAppendOnly": true,
+    "explanationsVersioned": true
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "version": "2.0.0",
+  "entity": "AnalyticsExperimentationSpecification",
+  "funnel": [
+    "onboarding_started",
+    "question_answered",
+    "onboarding_review_viewed",
+    "onboarding_completed",
+    "result_viewed",
+    "result_detail_viewed",
+    "blueprint_viewed",
+    "operating_rules_viewed",
+    "next_step_clicked",
+    "account_creation_started",
+    "account_creation_completed"
+  ],
+  "versionChangeRules": {
+    "presentationOnly": "no_resolver_change",
+    "questionMeaning": "quiz_version_change",
+    "scoringOrTieBreak": "resolver_version_change"
+  },
+  "prohibitedData": [
+    "account_numbers",
+    "credentials",
+    "unnecessary_pii",
+    "free_form_sensitive_financial_data"
+  ]
+}

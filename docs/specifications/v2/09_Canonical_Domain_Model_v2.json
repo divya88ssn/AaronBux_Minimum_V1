@@ -1,0 +1,71 @@
+{
+  "version": "2.0.0",
+  "entity": "CanonicalDomainModel",
+  "entities": {
+    "investorStages": [
+      "foundation_builder",
+      "portfolio_organizer",
+      "system_builder",
+      "intentional_optimizer",
+      "adaptive_investor"
+    ],
+    "behavioralModifiers": [
+      "validation_seeker",
+      "opportunity_chaser",
+      "instruction_seeker",
+      "confidence_builder",
+      "optimization_mindset"
+    ],
+    "investmentStyles": [
+      "guided_autopilot",
+      "steady_steward",
+      "systematic_improver",
+      "bounded_explorer",
+      "active_navigator"
+    ],
+    "portfolioArchetypes": [
+      "balanced_family_office",
+      "growth_diversifier",
+      "focused_compounder",
+      "tactical_opportunist",
+      "income_preserver"
+    ],
+    "portfolioBlueprints": [
+      "balanced_core",
+      "growth_core",
+      "focused_growth",
+      "core_satellite",
+      "income_core"
+    ]
+  },
+  "relationships": {
+    "balanced_family_office": {
+      "blueprint": "balanced_core",
+      "operatingRules": "balanced_family_office_default"
+    },
+    "growth_diversifier": {
+      "blueprint": "growth_core",
+      "operatingRules": "growth_diversifier_default"
+    },
+    "focused_compounder": {
+      "blueprint": "focused_growth",
+      "operatingRules": "focused_compounder_default"
+    },
+    "tactical_opportunist": {
+      "blueprint": "core_satellite",
+      "operatingRules": "tactical_opportunist_default"
+    },
+    "income_preserver": {
+      "blueprint": "income_core",
+      "operatingRules": "income_preserver_default"
+    }
+  },
+  "invariants": [
+    "stable_ids",
+    "deterministic_resolution",
+    "versioned_assessments",
+    "ai_cannot_change_resolved_ids",
+    "blueprint_must_match_archetype",
+    "operating_rules_must_match_blueprint"
+  ]
+}

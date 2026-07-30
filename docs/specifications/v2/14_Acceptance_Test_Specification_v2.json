@@ -1,0 +1,29 @@
+{
+  "version": "2.0.0",
+  "entity": "AcceptanceTestSpecification",
+  "testLayers": [
+    "schema_validation",
+    "catalog_integrity",
+    "resolver_unit",
+    "compatibility",
+    "scenario",
+    "api_contract",
+    "ui_contract",
+    "version_reproducibility",
+    "ai_guardrails"
+  ],
+  "canonicalScenarios": [
+    "guided_long_term_builder",
+    "systematic_growth_investor",
+    "bounded_opportunity_seeker",
+    "income_focused_investor",
+    "focused_active_investor"
+  ],
+  "definitionOfDone": {
+    "resolverCoverageMinimum": 0.9,
+    "catalogIntegrityPass": true,
+    "canonicalScenariosPass": true,
+    "historicalReproductionPass": true,
+    "aiGuardrailsPass": true
+  }
+}

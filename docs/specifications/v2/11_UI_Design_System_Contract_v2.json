@@ -1,0 +1,41 @@
+{
+  "version": "2.0.0",
+  "entity": "UIDesignSystemContract",
+  "screens": [
+    "welcome",
+    "existing_setup",
+    "portfolio_job",
+    "goals",
+    "time_horizon",
+    "effort_research",
+    "stress_response",
+    "decision_preference",
+    "opportunity_income",
+    "review",
+    "processing",
+    "result_summary",
+    "profile_detail",
+    "portfolio_blueprint",
+    "operating_rules",
+    "next_step"
+  ],
+  "componentProhibitions": [
+    "scoring",
+    "tie_breaking",
+    "archetype_selection",
+    "compatibility_decisions",
+    "confidence_calculation",
+    "prompt_construction",
+    "database_mapping"
+  ],
+  "analyticsEvents": [
+    "screen_viewed",
+    "answer_selected",
+    "answer_changed",
+    "validation_failed",
+    "quiz_completed",
+    "result_viewed",
+    "result_section_expanded",
+    "next_step_clicked"
+  ]
+}

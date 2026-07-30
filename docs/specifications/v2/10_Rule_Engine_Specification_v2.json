@@ -1,0 +1,50 @@
+{
+  "version": "2.0.0",
+  "entity": "RuleEngineSpecification",
+  "requiredDimensions": [
+    "existing_portfolio_maturity",
+    "portfolio_job",
+    "primary_goal",
+    "time_horizon",
+    "desired_effort",
+    "research_tolerance",
+    "stress_response",
+    "decision_preference",
+    "opportunity_interest",
+    "income_need"
+  ],
+  "scoreRange": {
+    "min": -3,
+    "max": 4
+  },
+  "tieBreakOrder": [
+    "portfolio_job",
+    "time_horizon",
+    "primary_goal",
+    "style_compatibility",
+    "lower_behavioral_demand",
+    "stable_id"
+  ],
+  "confidence": {
+    "base": 50,
+    "high": [
+      75,
+      100
+    ],
+    "medium": [
+      50,
+      74
+    ],
+    "low": [
+      0,
+      49
+    ]
+  },
+  "prohibitedCombinations": [
+    {
+      "style": "guided_autopilot",
+      "archetype": "tactical_opportunist"
+    }
+  ],
+  "llmAllowedInResolution": false
+}
