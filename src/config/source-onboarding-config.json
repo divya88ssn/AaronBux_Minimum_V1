@@ -1,0 +1,258 @@
+{
+  "assessmentId": "aaronbux_onboarding",
+  "copyVersion": "1.0.0",
+  "scoringVersion": "1.0.0",
+  "resolverVersion": "1.0.0",
+  "resultCatalogVersion": "1.0.0",
+  "selectionPolicy": {
+    "orderedMultiSelect": true,
+    "primaryWeight": 1.0,
+    "secondaryWeight": 0.75
+  },
+  "scoreCodes": {
+    "BFO": {"role": "portfolio_candidate", "label": "Balanced Family Office"},
+    "GD": {"role": "portfolio_candidate", "label": "Global Diversified"},
+    "FT": {"role": "portfolio_candidate", "label": "Factor Tilt"},
+    "GA": {"role": "portfolio_family", "label": "Growth + Alternatives"},
+    "TO": {"role": "portfolio_candidate", "label": "Tactical / Opportunistic"},
+    "IP": {"role": "resolver_cluster", "label": "Preservation Family"},
+    "ES": {"role": "investor_stage_signal", "label": "Emerging Strategist"},
+    "VS": {"role": "behavioral_modifier_signal", "label": "Validation Seeker"}
+  },
+  "questions": [
+    {
+      "id": "current_setup",
+      "step": 1,
+      "title": "What You Own Today",
+      "question": "Which of these sounds most like your portfolio right now?",
+      "helperText": "Choose up to two. It does not have to be perfectly organized yet.",
+      "selectionMode": "ordered_multi",
+      "minimumSelections": 1,
+      "maximumSelections": 2,
+      "decisionRole": "baseline_cluster",
+      "options": [
+        {"id":"broad_etfs","label":"Most of my money is in broad ETFs or index funds, and I mostly leave them alone.","scores":{"BFO":3,"GD":2},"signals":["passive_foundation","long_term_consistency","low_intervention"]},
+        {"id":"retirement_simple","label":"I mainly invest through a 401(k), IRA, target-date fund, or another simple retirement setup.","scores":{"BFO":3},"signals":["retirement_led","simple_setup","low_intervention"]},
+        {"id":"etfs_plus_stocks","label":"I own ETFs plus a few individual stocks, but I am not sure whether they fit together.","scores":{"ES":3,"FT":1,"VS":1},"signals":["portfolio_fragmentation","emerging_structure_need","confidence_gap"]},
+        {"id":"themes_and_other_assets","label":"I have started adding sectors, themes, dividend funds, real estate, or other investments.","scores":{"GA":3,"ES":2},"signals":["exploration_beyond_core","portfolio_layering"]},
+        {"id":"no_clear_strategy","label":"I have several investments, but I would not say I have one clear strategy behind them.","scores":{"ES":4,"VS":1},"signals":["strategy_formation_need","portfolio_fragmentation"]},
+        {"id":"compare_and_rebalance","label":"I regularly compare allocations, rebalance, or look for ways to improve the portfolio.","scores":{"FT":3,"ES":1},"signals":["systematic_optimization","active_review"]},
+        {"id":"opportunity_sleeve","label":"I keep some money for stocks or opportunities that I think could outperform.","scores":{"TO":3,"GA":2},"signals":["opportunity_sleeve","active_opportunity_interest"]},
+        {"id":"ready_to_start","label":"I have money ready to invest, but I am still trying to figure out where to start.","scores":{"BFO":2,"GD":1,"VS":2},"signals":["starter_state","instruction_need","confidence_gap"]}
+      ]
+    },
+    {
+      "id": "current_question",
+      "step": 2,
+      "title": "Why You Are Here",
+      "question": "What question keeps coming back when you look at your investments?",
+      "helperText": "Choose the one or two thoughts that sound most familiar.",
+      "selectionMode": "ordered_multi",
+      "minimumSelections": 1,
+      "maximumSelections": 2,
+      "decisionRole": "unresolved_need",
+      "options": [
+        {"id":"doing_this_right","label":"Am I actually doing this right?","scores":{"VS":4,"BFO":1},"signals":["validation_need","confidence_gap"]},
+        {"id":"good_enough_long_term","label":"Is what I already own good enough for the long term?","scores":{"VS":3,"BFO":2},"signals":["foundation_validation","long_term_confidence_need"]},
+        {"id":"etfs_enough","label":"Are broad ETFs enough, or am I missing something important?","scores":{"GD":3,"ES":1},"signals":["diversification_boundary","strategy_evolution"]},
+        {"id":"overcomplicating","label":"Am I overcomplicating something that could be simple?","scores":{"BFO":3,"VS":1},"signals":["complexity_anxiety","simplification_need"]},
+        {"id":"passive_not_enough","label":"When does ‘just keep investing’ stop being enough?","scores":{"ES":4},"signals":["strategy_evolution","decision_rule_need"]},
+        {"id":"why_outperform","label":"Why do some portfolios perform better than others?","scores":{"FT":4},"signals":["systematic_return_curiosity"]},
+        {"id":"when_to_change","label":"When should I actually change something—and when should I leave it alone?","scores":{"ES":3,"FT":1},"signals":["change_timing_need","operating_rule_need"]},
+        {"id":"growth_without_gambling","label":"How can I pursue more growth without feeling like I am gambling?","scores":{"FT":2,"GA":2},"signals":["controlled_growth_need","risk_boundary_need"]}
+      ]
+    },
+    {
+      "id": "beliefs",
+      "step": 3,
+      "title": "What Feels Sensible to You",
+      "question": "Which statements sound most like your view of investing?",
+      "helperText": "Choose up to two ideas you could realistically follow through both good and bad markets.",
+      "selectionMode": "ordered_multi",
+      "minimumSelections": 1,
+      "maximumSelections": 2,
+      "decisionRole": "portfolio_philosophy",
+      "options": [
+        {"id":"consistency_over_timing","label":"Investing consistently matters more than finding the perfect time or perfect investment.","scores":{"BFO":4},"signals":["long_term_discipline"]},
+        {"id":"simple_diversified","label":"A simple, diversified portfolio is probably enough for most of my money.","scores":{"GD":3,"BFO":1},"signals":["passive_diversification","simplicity_preference"]},
+        {"id":"average_returns_dependable","label":"I am comfortable with average market returns if the system is simple and dependable.","scores":{"BFO":3,"GD":2},"signals":["dependability_over_outperformance","low_complexity_preference"]},
+        {"id":"repeatable_strategies","label":"A few well-chosen strategies can improve returns if they are applied consistently.","scores":{"FT":4},"signals":["systematic_factor_orientation"]},
+        {"id":"avoid_concentration","label":"I do not want my future to depend too heavily on one company, sector, or country.","scores":{"GD":4},"signals":["broad_diversification_philosophy"]},
+        {"id":"stable_core_growth_sleeve","label":"It makes sense to keep a stable core and use a smaller amount for higher-growth ideas.","scores":{"GA":3,"TO":1,"BFO":1},"signals":["core_plus_growth","bounded_exploration"]},
+        {"id":"protect_as_much_as_grow","label":"Protecting what I have built matters as much as growing it.","scores":{"IP":4},"signals":["preservation_orientation"],"resolverTriggers":["preservation"]},
+        {"id":"drops_are_opportunities","label":"Large market drops can create opportunities worth acting on.","scores":{"TO":4,"GA":1},"signals":["tactical_opportunity_orientation"]}
+      ]
+    },
+    {
+      "id": "effort",
+      "step": 4,
+      "title": "How Much Work You Want",
+      "question": "How much time and attention do you realistically want investing to require?",
+      "helperText": "Choose the one approach you would maintain for years—not what sounds most advanced.",
+      "selectionMode": "single",
+      "minimumSelections": 1,
+      "maximumSelections": 1,
+      "decisionRole": "compatibility_constraint",
+      "options": [
+        {"id":"annual_check","label":"Set it up, automate it, and check it about once a year.","scores":{"BFO":4},"signals":["automation_preference","minimal_attention"],"effort":{"band":"very_low","reviewFrequency":"annual","researchTolerance":"very_low","marketAttention":"very_low","decisionFrequency":"rare","rulePreference":"high"}},
+        {"id":"few_times_year","label":"Check in a few times a year and make small changes only when needed.","scores":{"GD":3,"ES":1},"signals":["low_intervention","periodic_review"],"effort":{"band":"low","reviewFrequency":"few_times_year","researchTolerance":"low","marketAttention":"low","decisionFrequency":"low","rulePreference":"high"}},
+        {"id":"rules_rebalance","label":"Review the allocation periodically and rebalance using clear rules.","scores":{"FT":3,"ES":1},"signals":["rules_based_rebalancing"],"effort":{"band":"low_medium","reviewFrequency":"quarterly_or_semiannual","researchTolerance":"medium","marketAttention":"low","decisionFrequency":"periodic","rulePreference":"very_high"}},
+        {"id":"research_not_second_job","label":"Research before making changes, but I do not want investing to become a second job.","scores":{"ES":3,"FT":2},"signals":["bounded_research","intentional_decisions"],"effort":{"band":"medium","reviewFrequency":"periodic","researchTolerance":"medium","marketAttention":"low_medium","decisionFrequency":"periodic","rulePreference":"high"}},
+        {"id":"compare_strategies","label":"Compare funds, strategies, and portfolio approaches to look for improvements.","scores":{"FT":4},"signals":["optimization_interest"],"effort":{"band":"medium","reviewFrequency":"monthly_or_quarterly","researchTolerance":"high","marketAttention":"medium","decisionFrequency":"periodic","rulePreference":"high"}},
+        {"id":"limited_exploration","label":"Follow new ideas and use a limited part of the portfolio to explore them.","scores":{"GA":3,"TO":2},"signals":["bounded_exploration"],"effort":{"band":"medium_high","reviewFrequency":"monthly","researchTolerance":"high","marketAttention":"medium","decisionFrequency":"moderate","rulePreference":"medium"}},
+        {"id":"follow_markets","label":"Follow markets closely and make decisions when opportunities appear.","scores":{"TO":4},"signals":["high_intervention","market_led_decisions"],"effort":{"band":"high","reviewFrequency":"weekly_or_event_driven","researchTolerance":"high","marketAttention":"high","decisionFrequency":"high","rulePreference":"low_medium"}},
+        {"id":"tell_me_when_attention_needed","label":"I want the system to tell me when something actually needs my attention.","scores":{"BFO":2,"GD":2,"VS":1},"signals":["guided_monitoring","alert_preference"],"effort":{"band":"low","reviewFrequency":"exception_based","researchTolerance":"low","marketAttention":"low","decisionFrequency":"low","rulePreference":"very_high"}}
+      ]
+    },
+    {
+      "id": "stress",
+      "step": 5,
+      "title": "What You Would Do in a Market Drop",
+      "question": "If your portfolio fell sharply, which reaction would be most like you?",
+      "helperText": "Choose the reaction you would probably have, not what an ideal investor is supposed to do.",
+      "selectionMode": "single",
+      "minimumSelections": 1,
+      "maximumSelections": 1,
+      "decisionRole": "risk_feasibility",
+      "options": [
+        {"id":"keep_investing","label":"Keep investing and avoid changing anything just because prices fell.","scores":{"BFO":4,"GD":2},"signals":["stay_the_course","discipline"],"stress":{"type":"stay_the_course","riskBehavior":"stable","interventionTendency":"low"}},
+        {"id":"check_plan","label":"Check whether my original plan still makes sense before touching anything.","scores":{"ES":3,"FT":1},"signals":["structured_reassessment"],"stress":{"type":"goal_reassessment","riskBehavior":"measured","interventionTendency":"medium_low"}},
+        {"id":"rules_rebalance_stress","label":"Rebalance if part of the portfolio moved outside its intended range.","scores":{"FT":3},"signals":["rules_based_adjustment"],"stress":{"type":"rules_rebalance","riskBehavior":"measured","interventionTendency":"medium"}},
+        {"id":"move_safer","label":"Move some money toward safer or more dependable investments.","scores":{"IP":4},"signals":["preservation_shift"],"stress":{"type":"preservation_shift","riskBehavior":"defensive","interventionTendency":"medium"},"resolverTriggers":["preservation"]},
+        {"id":"look_for_bargains","label":"Look for investments that may now be available at better prices.","scores":{"TO":3,"GA":2},"signals":["opportunity_response"],"stress":{"type":"opportunity_seeking","riskBehavior":"growth_seeking","interventionTendency":"medium_high"}},
+        {"id":"read_others","label":"Read what other investors are doing before I decide.","scores":{"VS":3,"ES":1},"signals":["external_validation"],"stress":{"type":"external_validation","riskBehavior":"uncertain","interventionTendency":"medium"}},
+        {"id":"question_portfolio","label":"Start wondering whether I chose the wrong portfolio in the first place.","scores":{"VS":4},"signals":["strategy_doubt","confidence_risk"],"stress":{"type":"strategy_doubt","riskBehavior":"uncertain","interventionTendency":"variable"}},
+        {"id":"move_quickly_regime","label":"Move quickly if I believe the market environment has genuinely changed.","scores":{"TO":4},"signals":["regime_change_intervention"],"stress":{"type":"regime_change","riskBehavior":"active","interventionTendency":"high"}}
+      ]
+    },
+    {
+      "id": "time_horizon",
+      "step": 6,
+      "title": "When You Need the Money",
+      "question": "When might you need to use a meaningful portion of this money?",
+      "helperText": "Think about the money you want AaronBux to help you organize.",
+      "selectionMode": "single",
+      "minimumSelections": 1,
+      "maximumSelections": 1,
+      "decisionRole": "time_horizon_modifier",
+      "options": [
+        {"id":"15_plus_years","label":"Probably not for at least 15 years.","signals":["long_horizon"],"multipliers":{"FT":1.15,"GA":1.15,"TO":1.15},"horizon":{"band":"15_plus","liquidityConstraint":"low"}},
+        {"id":"10_15_years","label":"Roughly 10–15 years from now.","signals":["long_medium_horizon"],"multipliers":{"FT":1.10,"GA":1.10},"horizon":{"band":"10_15","liquidityConstraint":"low_medium"}},
+        {"id":"5_10_years","label":"Roughly 5–10 years from now.","signals":["medium_horizon"],"multipliers":{},"horizon":{"band":"5_10","liquidityConstraint":"medium"}},
+        {"id":"3_5_years","label":"Within about 3–5 years.","signals":["short_medium_horizon"],"multipliers":{"BFO":1.10,"IP":1.10,"TO":0.75},"horizon":{"band":"3_5","liquidityConstraint":"high"}},
+        {"id":"under_3_years","label":"Within the next 3 years.","signals":["short_horizon","liability_risk"],"multipliers":{"IP":1.20,"TO":0.50},"horizon":{"band":"under_3","liquidityConstraint":"very_high"},"resolverTriggers":["liability"]},
+        {"id":"multiple_timelines","label":"I have different goals with different timelines.","signals":["multiple_goal_horizons"],"multipliers":{},"horizon":{"band":"multiple","liquidityConstraint":"mixed"},"resolverTriggers":["goal_bucket"]},
+        {"id":"not_sure","label":"I am not sure yet. I mainly want to stop leaving the money unplanned.","scores":{"VS":2},"signals":["horizon_uncertainty","planning_need"],"multipliers":{},"horizon":{"band":"unknown","liquidityConstraint":"unknown"}}
+      ]
+    },
+    {
+      "id": "portfolio_job",
+      "step": 7,
+      "title": "What You Need the Portfolio to Do",
+      "question": "What do you most want this portfolio to help you accomplish?",
+      "helperText": "Choose up to two. Your goals shape the portfolio, but they do not erase the behavior shown in your earlier answers.",
+      "selectionMode": "ordered_multi",
+      "minimumSelections": 1,
+      "maximumSelections": 2,
+      "decisionRole": "portfolio_job_modifier",
+      "options": [
+        {"id":"steady_wealth","label":"Build wealth steadily without needing to think about the market all the time.","scores":{"BFO":3,"GD":2},"signals":["long_term_wealth","low_attention_goal"],"portfolioJobs":["long_term_wealth"]},
+        {"id":"properly_diversified","label":"Know that my portfolio is properly diversified and not dependent on one big bet.","scores":{"GD":4},"signals":["diversification_goal"],"portfolioJobs":["diversification"]},
+        {"id":"repeatable_return_improvement","label":"Improve my returns using a clear, repeatable strategy.","scores":{"FT":4},"signals":["systematic_return_goal"],"portfolioJobs":["systematic_return_improvement"]},
+        {"id":"stable_core_growth","label":"Keep a stable foundation while leaving room for higher-growth ideas.","scores":{"GA":3,"BFO":1},"signals":["bounded_growth_goal"],"portfolioJobs":["bounded_growth"],"resolverTriggers":["growth_specialization"]},
+        {"id":"dependable_income","label":"Generate dependable income from part of the portfolio.","scores":{"IP":4},"signals":["income_goal"],"portfolioJobs":["income"],"resolverTriggers":["preservation"]},
+        {"id":"protect_future_money","label":"Protect money I have already built or will need in the future.","scores":{"IP":4,"BFO":1},"signals":["capital_protection_goal"],"portfolioJobs":["capital_preservation"],"resolverTriggers":["preservation"]},
+        {"id":"organize_existing","label":"Turn the investments I already own into one organized system.","scores":{"ES":4,"FT":1},"signals":["portfolio_organization_goal"],"portfolioJobs":["portfolio_organization"]},
+        {"id":"controlled_opportunities","label":"Act on market opportunities while keeping the risks controlled.","scores":{"TO":4,"GA":1},"signals":["tactical_participation_goal"],"portfolioJobs":["tactical_opportunity_participation"]},
+        {"id":"stop_second_guessing","label":"Feel confident enough to stop second-guessing every decision.","scores":{"VS":4},"signals":["confidence_goal"],"portfolioJobs":["confidence_and_validation"]}
+      ]
+    }
+  ],
+  "compatibilityRules": {
+    "effort": {
+      "very_low": {"allowed":["BFO","GD","PERMANENT_PORTFOLIO"],"constrained":["GA"],"excluded":["TO"]},
+      "low": {"allowed":["BFO","GD","INCOME_FOCUSED"],"constrained":["FT","GA"],"excluded":["TO"]},
+      "low_medium": {"allowed":["BFO","GD","FT","RISK_PARITY"],"constrained":["GA"],"excluded":[]},
+      "medium": {"allowed":["FT","GD","RISK_PARITY","INFLATION_HEDGE"],"constrained":["GA","TO"],"excluded":[]},
+      "medium_high": {"allowed":["GA","BARBELL","REAL_ASSET_PRESERVATION"],"constrained":["TO"],"excluded":[]},
+      "high": {"allowed":["TO","GA","TECH_INNOVATION","COMMODITY_HEAVY"],"constrained":[],"excluded":[]}
+    },
+    "stress": {
+      "preservation_shift": {"exclude":["TO"],"constrain":["GA"],"boostResolver":"preservation"},
+      "strategy_doubt": {"addModifier":"VS","requireGuidedExplanation":true},
+      "external_validation": {"addModifier":"VS","requireGuidedExplanation":true},
+      "regime_change": {"supports":["TO"],"requiresEffortAtLeast":"medium_high"}
+    }
+  },
+  "tieBreakOrder": ["effort","stress","portfolio_job","current_setup","resolver"],
+  "resolverDefinitions": {
+    "bfo_vs_gd": {
+      "question":"Which outcome matters more?",
+      "options":[
+        {"id":"balanced_system","label":"One balanced portfolio with growth, stability, cash, and room for selected opportunities.","result":"BFO"},
+        {"id":"broad_low_cost","label":"A broad, low-cost portfolio that owns markets across countries and largely stays untouched.","result":"GD"}
+      ]
+    },
+    "ft_vs_ga": {
+      "question":"Which kind of improvement interests you more?",
+      "options":[
+        {"id":"repeatable_factors","label":"Using repeatable strategies such as value, quality, or momentum.","result":"FT"},
+        {"id":"new_return_sources","label":"Adding new return sources such as private assets, real assets, or innovation exposure.","result":"GA"}
+      ]
+    },
+    "ga_vs_to": {
+      "question":"How do you want opportunities to enter the portfolio?",
+      "options":[
+        {"id":"limited_sleeve","label":"Through a limited sleeve that stays within a long-term allocation.","result":"GA"},
+        {"id":"active_decisions","label":"Through active decisions based on price, market conditions, or catalysts.","result":"TO"}
+      ]
+    },
+    "preservation": {
+      "question":"What are you primarily trying to protect or produce?",
+      "options":[
+        {"id":"income","label":"My ability to generate dependable income.","result":"INCOME_FOCUSED"},
+        {"id":"purchasing_power","label":"My purchasing power if inflation remains high.","result":"INFLATION_HEDGE"},
+        {"id":"known_expense","label":"Money earmarked for a known future expense.","result":"LIABILITY_DRIVEN"},
+        {"id":"tangible_wealth","label":"Wealth concentrated in property, a business, or another major asset.","result":"REAL_ASSET_OR_LUMPY_WEALTH","followUp":"concentration_type"},
+        {"id":"economic_environments","label":"My portfolio across several different economic environments.","result":"PERMANENT_OR_RISK_PARITY","followUp":"risk_balance_preference"}
+      ]
+    },
+    "growth_specialization": {
+      "question":"What kind of opportunity do you want beyond a traditional portfolio?",
+      "options":[
+        {"id":"innovation","label":"Innovation and technology.","result":"TECH_INNOVATION"},
+        {"id":"private_markets","label":"Private markets and multiple alternative return sources.","result":"ENDOWMENT_OR_GA"},
+        {"id":"real_assets","label":"Property, infrastructure, and tangible assets.","result":"REAL_ASSET_PRESERVATION"},
+        {"id":"commodities","label":"Commodities and resource cycles.","result":"COMMODITY_HEAVY"},
+        {"id":"business_risk","label":"Diversification away from a business or concentrated wealth source.","result":"LUMPY_WEALTH"}
+      ]
+    },
+    "goal_bucket": {
+      "question":"Which timeline should shape the first portfolio blueprint?",
+      "options":[
+        {"id":"near_term","label":"A goal within the next 3 years.","result":"LIABILITY_DRIVEN"},
+        {"id":"medium_term","label":"A goal roughly 3–10 years away.","result":"MULTI_BUCKET_MEDIUM"},
+        {"id":"long_term","label":"Long-term wealth more than 10 years away.","result":"MULTI_BUCKET_LONG"},
+        {"id":"separate_buckets","label":"I need separate near-, medium-, and long-term buckets.","result":"MULTI_BUCKET"}
+      ]
+    }
+  },
+  "resolutionPipeline": [
+    "validate_answers",
+    "recompute_raw_scores",
+    "apply_order_weighting",
+    "extract_stage_signals",
+    "extract_behavioral_modifiers",
+    "apply_time_horizon_multipliers",
+    "apply_portfolio_job_scores",
+    "apply_effort_compatibility",
+    "apply_stress_compatibility",
+    "detect_belief_stress_mismatch",
+    "rank_eligible_candidates",
+    "evaluate_resolver_triggers",
+    "apply_tie_breaks",
+    "run_resolver_if_needed",
+    "calculate_result_confidence",
+    "generate_result_object"
+  ]
+}
