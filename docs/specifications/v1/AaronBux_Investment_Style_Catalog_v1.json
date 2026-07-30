@@ -1,0 +1,179 @@
+{
+  "catalogId": "investment_style_catalog",
+  "version": "1.0.0",
+  "purpose": "Describe how a user can realistically operate an investing system over time.",
+  "styleIds": [
+    "guided_autopilot",
+    "steady_steward",
+    "systematic_improver",
+    "bounded_explorer",
+    "active_navigator"
+  ],
+  "styles": {
+    "guided_autopilot": {
+      "name": "Guided Autopilot",
+      "summary": "A mostly automated investing system with clear explanations and attention only when something meaningfully changes.",
+      "effortBands": ["very_low", "low"],
+      "operatingProfile": {
+        "effortBudget": "Under 1 hour per month",
+        "reviewCadence": "Annual with optional semiannual check-in",
+        "monitoringMode": "Exception-based",
+        "researchExpectation": "Minimal",
+        "decisionFrequency": "Rare",
+        "changeThreshold": "High",
+        "automationPreference": "High",
+        "guidanceLevel": "High",
+        "explanationDepth": "Medium"
+      },
+      "supportingSignals": ["low_intervention", "simple_setup", "passive_foundation", "rules_based_attention", "system_attention_preference", "low_attention_goal"],
+      "compatibleArchetypes": ["BFO", "GD", "PERMANENT_PORTFOLIO", "INCOME_FOCUSED", "LIABILITY_DRIVEN"],
+      "constrainedArchetypes": ["FT", "GA"],
+      "excludedArchetypes": ["TO"],
+      "resultCopy": {
+        "headline": "Your investing style is Guided Autopilot.",
+        "summary": "You are most likely to stay consistent when your portfolio has a clear structure, runs mostly in the background, and asks for your attention only when a meaningful decision is required.",
+        "whatThisMeans": "Your system should automate routine behavior, explain why a change is or is not needed, and avoid creating work merely to make the portfolio feel active.",
+        "watchOut": "A low-maintenance system still needs defined review points. AaronBux should help you notice genuine changes without turning normal market movement into an alert."
+      }
+    },
+    "steady_steward": {
+      "name": "Steady Steward",
+      "summary": "A durable portfolio reviewed occasionally with disciplined, limited changes.",
+      "effortBands": ["low", "low_medium"],
+      "operatingProfile": {
+        "effortBudget": "1-2 hours per quarter",
+        "reviewCadence": "Quarterly light review and annual full review",
+        "monitoringMode": "Portfolio-level and goal-relevant",
+        "researchExpectation": "Low",
+        "decisionFrequency": "Occasional",
+        "changeThreshold": "Medium-high",
+        "automationPreference": "Medium-high",
+        "guidanceLevel": "Medium",
+        "explanationDepth": "Medium"
+      },
+      "supportingSignals": ["long_term_consistency", "diversification_goal", "structured_reassessment", "goal_alignment_check", "periodic_review", "stay_the_course"],
+      "compatibleArchetypes": ["BFO", "GD", "INCOME_FOCUSED", "INFLATION_HEDGE", "LIABILITY_DRIVEN", "PERMANENT_PORTFOLIO"],
+      "constrainedArchetypes": ["FT", "RISK_PARITY", "GA"],
+      "excludedArchetypes": ["TO"],
+      "resultCopy": {
+        "headline": "Your investing style is Steady Steward.",
+        "summary": "You appear comfortable staying involved as long as the portfolio does not demand constant attention.",
+        "whatThisMeans": "Your system should be durable enough to leave alone between reviews, but transparent enough that you can understand and approve important adjustments.",
+        "watchOut": "Occasional review can become piecemeal decision-making if the portfolio does not have an explicit structure."
+      }
+    },
+    "systematic_improver": {
+      "name": "Systematic Improver",
+      "summary": "A repeatable process for reviewing, comparing, and improving the portfolio.",
+      "effortBands": ["low_medium", "medium", "high"],
+      "operatingProfile": {
+        "effortBudget": "1-3 hours per month",
+        "reviewCadence": "Monthly monitoring and quarterly decision review",
+        "monitoringMode": "Allocation, factor, cost, concentration, and rule-based signals",
+        "researchExpectation": "Medium",
+        "decisionFrequency": "Periodic",
+        "changeThreshold": "Rule-based",
+        "automationPreference": "Medium",
+        "guidanceLevel": "Medium",
+        "explanationDepth": "High"
+      },
+      "supportingSignals": ["systematic_optimization", "repeatable_strategy_preference", "rules_based_rebalance", "systematic_return_goal", "strategy_comparison", "portfolio_construction_curiosity"],
+      "compatibleArchetypes": ["FT", "RISK_PARITY", "GD", "BFO"],
+      "constrainedArchetypes": ["GA", "PERMANENT_PORTFOLIO", "INFLATION_HEDGE", "TO"],
+      "excludedArchetypes": [],
+      "resultCopy": {
+        "headline": "Your investing style is Systematic Improver.",
+        "summary": "You are most likely to trust a portfolio when its decisions follow a repeatable method.",
+        "whatThisMeans": "AaronBux should give you structured comparisons, clear allocation ranges, and a record of why each change was made.",
+        "watchOut": "A repeatable process can still become over-optimization. Every additional strategy should earn its place."
+      }
+    },
+    "bounded_explorer": {
+      "name": "Bounded Explorer",
+      "summary": "A stable core with controlled room to research and test selected ideas.",
+      "effortBands": ["medium", "medium_high", "high"],
+      "operatingProfile": {
+        "effortBudget": "2-4 hours per month",
+        "reviewCadence": "Monthly opportunity review and quarterly portfolio review",
+        "monitoringMode": "Core health plus sleeve-specific signals",
+        "researchExpectation": "Medium-high",
+        "decisionFrequency": "Occasional to moderate",
+        "changeThreshold": "Moderate within sleeve and high for core",
+        "automationPreference": "High for core and low-medium for sleeve",
+        "guidanceLevel": "Medium",
+        "explanationDepth": "High"
+      },
+      "supportingSignals": ["exploration_beyond_core", "bounded_growth_goal", "opportunity_sleeve", "innovation_interest", "alternative_return_interest", "controlled_growth"],
+      "compatibleArchetypes": ["GA", "BFO", "BARBELL", "ENDOWMENT_STYLE", "REAL_ASSET_PRESERVATION"],
+      "constrainedArchetypes": ["GD", "FT", "TECH_INNOVATION", "COMMODITY_HEAVY", "TO"],
+      "excludedArchetypes": [],
+      "resultCopy": {
+        "headline": "Your investing style is Bounded Explorer.",
+        "summary": "You want more than a basic portfolio, but you also want a structure that prevents every new idea from reshaping your financial plan.",
+        "whatThisMeans": "AaronBux should help you evaluate ideas in the context of your full portfolio and preserve a clear sleeve budget.",
+        "watchOut": "The main risk is allowing individually reasonable ideas to accumulate into an unplanned portfolio."
+      }
+    },
+    "active_navigator": {
+      "name": "Active Navigator",
+      "summary": "A defined framework for making more frequent, market-aware decisions without losing portfolio boundaries.",
+      "effortBands": ["medium_high", "high"],
+      "operatingProfile": {
+        "effortBudget": "1-3 hours per week or more",
+        "reviewCadence": "Weekly and event-driven",
+        "monitoringMode": "Market, valuation, catalyst, risk, and exposure signals",
+        "researchExpectation": "High",
+        "decisionFrequency": "Moderate to frequent",
+        "changeThreshold": "Strategy and risk-rule based",
+        "automationPreference": "Low for decisions and high for guardrails",
+        "guidanceLevel": "Low-medium",
+        "explanationDepth": "High"
+      },
+      "supportingSignals": ["high_market_attention", "regime_change_intervention", "tactical_participation_goal", "active_opportunity_interest", "market_condition_decisions", "high_intervention"],
+      "requiredRules": ["At least two independent active-decision signals", "Effort must be medium-high or high"],
+      "compatibleArchetypes": ["TO", "BARBELL", "GA", "COMMODITY_HEAVY"],
+      "constrainedArchetypes": ["BFO", "FT"],
+      "excludedArchetypes": [],
+      "resultCopy": {
+        "headline": "Your investing style is Active Navigator.",
+        "summary": "You want an investing system that allows you to respond to changing conditions rather than follow a fully static plan.",
+        "whatThisMeans": "AaronBux should help you define the thesis, size, trigger, and exit conditions for each active decision while protecting the long-term portfolio.",
+        "watchOut": "The central risk is allowing frequent decisions to replace a coherent portfolio process."
+      }
+    }
+  },
+  "resolution": {
+    "inputWeights": {
+      "effort": 0.4,
+      "stress": 0.2,
+      "beliefs": 0.15,
+      "currentSetup": 0.1,
+      "currentQuestion": 0.1,
+      "portfolioJob": 0.05
+    },
+    "hardConstraints": {
+      "very_low": ["guided_autopilot"],
+      "low": ["guided_autopilot", "steady_steward"],
+      "low_medium": ["steady_steward", "systematic_improver"],
+      "medium": ["systematic_improver", "bounded_explorer"],
+      "medium_high": ["bounded_explorer", "active_navigator", "systematic_improver"],
+      "high": ["active_navigator", "bounded_explorer", "systematic_improver"]
+    },
+    "rules": [
+      "Active Navigator requires at least two independent active-decision signals.",
+      "Bounded Explorer requires exploration interest and a boundary signal.",
+      "Systematic Improver requires a rule, comparison, or repeatable-strategy signal.",
+      "Validation Seeker customizes support and never independently selects a style.",
+      "Time horizon does not directly score investment style."
+    ]
+  },
+  "analyticsEvents": [
+    "investment_style_resolved",
+    "investment_style_viewed",
+    "investment_style_evidence_expanded",
+    "investment_style_disagreed",
+    "investment_style_answer_review_started",
+    "investment_style_answer_changed",
+    "investment_style_continued"
+  ]
+}

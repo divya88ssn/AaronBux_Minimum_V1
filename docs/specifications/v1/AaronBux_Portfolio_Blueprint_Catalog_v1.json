@@ -1,0 +1,96 @@
+{
+  "version": "1.0",
+  "entity": "PortfolioBlueprintCatalog",
+  "components": [
+    {
+      "id": "core_growth",
+      "required": true,
+      "role": "Primary long-term growth engine"
+    },
+    {
+      "id": "global_diversification",
+      "required": true,
+      "role": "Reduce concentration risk"
+    },
+    {
+      "id": "stability",
+      "required": false,
+      "role": "Reduce volatility"
+    },
+    {
+      "id": "income",
+      "required": false,
+      "role": "Generate cash flow"
+    },
+    {
+      "id": "opportunity_sleeve",
+      "required": false,
+      "role": "Bounded tactical investing"
+    },
+    {
+      "id": "inflation_protection",
+      "required": false,
+      "role": "Preserve purchasing power"
+    },
+    {
+      "id": "liquidity_reserve",
+      "required": false,
+      "role": "Short-term flexibility"
+    }
+  ],
+  "blueprints": [
+    {
+      "id": "balanced_core",
+      "archetype": "BFO",
+      "components": [
+        "core_growth",
+        "global_diversification",
+        "stability",
+        "income"
+      ]
+    },
+    {
+      "id": "growth_core",
+      "archetype": "GD",
+      "components": [
+        "core_growth",
+        "global_diversification",
+        "stability"
+      ]
+    },
+    {
+      "id": "focused_growth",
+      "archetype": "FT",
+      "components": [
+        "core_growth",
+        "global_diversification"
+      ]
+    },
+    {
+      "id": "core_satellite",
+      "archetype": "TO",
+      "components": [
+        "core_growth",
+        "global_diversification",
+        "opportunity_sleeve"
+      ]
+    },
+    {
+      "id": "income_core",
+      "archetype": "IP",
+      "components": [
+        "income",
+        "stability",
+        "liquidity_reserve",
+        "core_growth"
+      ]
+    }
+  ],
+  "doesNotSpecify": [
+    "etfs",
+    "stocks",
+    "funds",
+    "percentages"
+  ],
+  "futureEngine": "Allocation recommendation engine"
+}

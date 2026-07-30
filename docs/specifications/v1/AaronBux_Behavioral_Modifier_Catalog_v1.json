@@ -1,0 +1,53 @@
+{
+  "version": "1.0",
+  "entity": "BehavioralModifierCatalog",
+  "modifiers": [
+    {
+      "id": "validation_seeker",
+      "displayName": "Validation Seeker",
+      "goal": "Gain confidence before acting",
+      "coaching": "evidence_first"
+    },
+    {
+      "id": "opportunity_chaser",
+      "displayName": "Opportunity Chaser",
+      "goal": "Explore opportunities safely",
+      "coaching": "bounded_exploration"
+    },
+    {
+      "id": "instruction_seeker",
+      "displayName": "Instruction Seeker",
+      "goal": "Receive explicit guidance",
+      "coaching": "step_by_step"
+    },
+    {
+      "id": "confidence_builder",
+      "displayName": "Confidence Builder",
+      "goal": "Maintain confidence during volatility",
+      "coaching": "reassurance"
+    },
+    {
+      "id": "optimization_mindset",
+      "displayName": "Optimization Mindset",
+      "goal": "Continuously improve system",
+      "coaching": "diagnostics"
+    }
+  ],
+  "affects": [
+    "coaching_tone",
+    "explanation_style",
+    "alert_copy",
+    "feature_priority",
+    "decision_journal"
+  ],
+  "doesNotAffect": [
+    "portfolio_archetype",
+    "portfolio_blueprint",
+    "allocation",
+    "risk_level"
+  ],
+  "resolution": {
+    "primaryModifier": "required",
+    "secondaryModifier": "optional"
+  }
+}

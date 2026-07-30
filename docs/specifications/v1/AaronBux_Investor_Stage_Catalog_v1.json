@@ -1,0 +1,66 @@
+{
+  "version": "1.0",
+  "entity": "InvestorStageCatalog",
+  "stages": [
+    {
+      "id": "foundation_builder",
+      "displayName": "Foundation Builder",
+      "nextStage": "portfolio_organizer",
+      "compatibleInvestmentStyles": [
+        "guided_autopilot",
+        "steady_steward"
+      ]
+    },
+    {
+      "id": "portfolio_organizer",
+      "displayName": "Portfolio Organizer",
+      "nextStage": "system_builder",
+      "compatibleInvestmentStyles": [
+        "guided_autopilot",
+        "steady_steward",
+        "systematic_improver"
+      ]
+    },
+    {
+      "id": "system_builder",
+      "displayName": "System Builder",
+      "nextStage": "intentional_optimizer",
+      "compatibleInvestmentStyles": [
+        "steady_steward",
+        "systematic_improver",
+        "bounded_explorer"
+      ]
+    },
+    {
+      "id": "intentional_optimizer",
+      "displayName": "Intentional Optimizer",
+      "nextStage": "adaptive_investor",
+      "compatibleInvestmentStyles": [
+        "systematic_improver",
+        "bounded_explorer"
+      ]
+    },
+    {
+      "id": "adaptive_investor",
+      "displayName": "Adaptive Investor",
+      "nextStage": null,
+      "compatibleInvestmentStyles": [
+        "bounded_explorer",
+        "active_navigator"
+      ]
+    }
+  ],
+  "resolutionRules": {
+    "affects": [
+      "coaching",
+      "learning",
+      "feature_unlocks",
+      "explanation_depth"
+    ],
+    "doesNotAffect": [
+      "portfolio_archetype",
+      "allocation",
+      "risk_level"
+    ]
+  }
+}

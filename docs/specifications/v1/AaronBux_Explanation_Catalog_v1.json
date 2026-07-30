@@ -1,0 +1,37 @@
+{
+  "version": "1.0",
+  "entity": "ExplanationCatalog",
+  "principles": [
+    "explain_not_prescribe",
+    "build_confidence",
+    "focus_on_fit",
+    "plain_language_first",
+    "acknowledge_uncertainty"
+  ],
+  "layers": [
+    "summary",
+    "investor_stage",
+    "behavioral_modifier",
+    "investment_style",
+    "portfolio_archetype",
+    "portfolio_blueprint",
+    "operating_rules"
+  ],
+  "confidenceMessages": {
+    "high": "Your answers consistently point toward this recommendation.",
+    "medium": "Most of your answers align with this recommendation.",
+    "low": "Your answers reflect multiple investing preferences. This recommendation is a starting point that can evolve."
+  },
+  "resultObject": [
+    "headline",
+    "summary",
+    "stage_explanation",
+    "modifier_explanation",
+    "style_explanation",
+    "archetype_explanation",
+    "blueprint_explanation",
+    "operating_rules_explanation",
+    "confidence_message",
+    "next_step"
+  ]
+}

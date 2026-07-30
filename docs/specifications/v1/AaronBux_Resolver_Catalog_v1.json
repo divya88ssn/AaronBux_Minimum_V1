@@ -1,0 +1,57 @@
+{
+  "version": "1.0",
+  "entity": "ResolverCatalog",
+  "pipeline": [
+    "validate_answers",
+    "normalize_answers",
+    "apply_weights",
+    "calculate_scores",
+    "resolve_stage",
+    "resolve_behavioral_modifier",
+    "resolve_investment_style",
+    "resolve_portfolio_archetype",
+    "select_portfolio_blueprint",
+    "attach_operating_rules",
+    "generate_explanation",
+    "calculate_confidence",
+    "return_assessment"
+  ],
+  "inputs": [
+    "existing_portfolio",
+    "goals",
+    "beliefs",
+    "effort",
+    "stress_response",
+    "time_horizon",
+    "portfolio_job"
+  ],
+  "outputs": {
+    "required": [
+      "investor_stage",
+      "behavioral_modifier",
+      "investment_style",
+      "portfolio_archetype",
+      "portfolio_blueprint",
+      "operating_rules"
+    ],
+    "optional": [
+      "secondary_modifier",
+      "secondary_archetype",
+      "confidence",
+      "learning_path"
+    ]
+  },
+  "tieBreakOrder": [
+    "portfolio_job",
+    "time_horizon",
+    "goals",
+    "effort",
+    "stress_response",
+    "existing_portfolio"
+  ],
+  "errorHandling": {
+    "missing_answers": "request_completion",
+    "invalid_input": "reject",
+    "contradictions": "lower_confidence"
+  }
+}

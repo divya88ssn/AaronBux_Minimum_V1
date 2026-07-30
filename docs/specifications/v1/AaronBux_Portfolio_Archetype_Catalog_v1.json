@@ -1,0 +1,78 @@
+{
+  "version": "1.0",
+  "entity": "PortfolioArchetypeCatalog",
+  "archetypes": [
+    {
+      "id": "balanced_family_office",
+      "code": "BFO",
+      "displayName": "Balanced Family Office",
+      "purpose": "Resilient diversified wealth",
+      "compatibleStyles": [
+        "guided_autopilot",
+        "steady_steward"
+      ],
+      "defaultBlueprint": "balanced_core"
+    },
+    {
+      "id": "growth_diversifier",
+      "code": "GD",
+      "displayName": "Growth Diversifier",
+      "purpose": "Growth with diversification",
+      "compatibleStyles": [
+        "steady_steward",
+        "systematic_improver"
+      ],
+      "defaultBlueprint": "growth_core"
+    },
+    {
+      "id": "focused_compounder",
+      "code": "FT",
+      "displayName": "Focused Compounder",
+      "purpose": "High-conviction compounding",
+      "compatibleStyles": [
+        "systematic_improver",
+        "bounded_explorer"
+      ],
+      "defaultBlueprint": "focused_growth"
+    },
+    {
+      "id": "tactical_opportunist",
+      "code": "TO",
+      "displayName": "Tactical Opportunist",
+      "purpose": "Core plus opportunity sleeve",
+      "compatibleStyles": [
+        "bounded_explorer",
+        "active_navigator"
+      ],
+      "defaultBlueprint": "core_satellite"
+    },
+    {
+      "id": "income_preserver",
+      "code": "IP",
+      "displayName": "Income Preserver",
+      "purpose": "Income and capital preservation",
+      "compatibleStyles": [
+        "guided_autopilot",
+        "steady_steward"
+      ],
+      "defaultBlueprint": "income_core"
+    }
+  ],
+  "resolverInputs": [
+    "portfolio_job",
+    "goals",
+    "time_horizon",
+    "beliefs",
+    "effort",
+    "stress_response"
+  ],
+  "affects": [
+    "portfolio_blueprint",
+    "result_copy",
+    "diagnostics"
+  ],
+  "doesNotAffect": [
+    "investor_stage",
+    "behavioral_modifier"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "version": "1.0",
+  "entity": "OperatingRulesCatalog",
+  "ruleCategories": [
+    "contribution_rules",
+    "review_rules",
+    "rebalancing_rules",
+    "opportunity_rules",
+    "risk_guardrails",
+    "decision_journal_rules",
+    "coaching_rules"
+  ],
+  "defaultProfiles": [
+    {
+      "archetype": "BFO",
+      "reviewCadence": "annual",
+      "maintenance": "low"
+    },
+    {
+      "archetype": "GD",
+      "reviewCadence": "semiannual",
+      "maintenance": "medium"
+    },
+    {
+      "archetype": "FT",
+      "reviewCadence": "quarterly",
+      "maintenance": "medium"
+    },
+    {
+      "archetype": "TO",
+      "reviewCadence": "quarterly",
+      "opportunityReview": "monthly",
+      "maintenance": "high"
+    },
+    {
+      "archetype": "IP",
+      "reviewCadence": "annual",
+      "incomeReview": "quarterly",
+      "maintenance": "low"
+    }
+  ],
+  "guardrails": [
+    "avoid_overtrading",
+    "preserve_core_allocation",
+    "respect_goal_alignment",
+    "limit_concentration"
+  ],
+  "doesNotSpecify": [
+    "specific_securities",
+    "allocation_percentages",
+    "market_predictions"
+  ]
+}
